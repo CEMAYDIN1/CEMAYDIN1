@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+          <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Cem Aydın - CV</title>
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+                    <style>
+                              body {
+                                        background-color: #fff;
+                                        color: #000;
+                                        font-family: Arial, sans-serif;
+                                        margin: 0;
+                                        padding: 0;
+                              }
+
+                              .container {
+                                        max-width: 800px;
+                                        margin: 0 auto;
+                                        padding: 20px;
+                              }
+
+                              h1 {
+                                        font-size: 32px;
+                                        text-align: center;
+                                        margin-bottom: 20px;
+                                        font-weight: bold;
+                                        font-family: 'Bebas Neue', sans-serif;
+                              }
+
+                              h2 {
+                                        font-size: 24px;
+                                        margin-top: 30px;
+                                        font-weight: bold;
+                                        border-bottom: 2px solid #000;
+                                        padding-bottom: 10px;
+                                        font-family: 'Bebas Neue', sans-serif;
+                                        text-align: justify;
+                              }
+
+                              h3 {
+                                        font-size: 28px;
+                                        margin-top: 20px;
+                                        font-weight: bold;
+                                        text-align: center;
+                                        font-family: 'Bebas Neue', sans-serif;
+                              }
+
+                              img {
+                                        display: block;
+                                        margin: 0 auto;
+                                        width: 200px;
+                                        height: 200px;
+                                        border-radius: 50%;
+                                        margin-top: 30px;
+                              }
+
+                              p {
+                                        margin-bottom: 10px;
+                                        font-weight: bold;
+                                        text-align: justify;
+                              }
+
+                              .menu {
+                                        cursor: pointer;
+                                        font-weight: bold;
+                                        margin-bottom: 10px;
+                              }
+
+                              .content {
+                                        display: none;
+                                        margin-top: 10px;
+                                        padding-left: 20px;
+                                        text-align: justify;
+                              }
+
+                              .contact-icons {
+                                        position: fixed;
+                                        bottom: 20px;
+                                        right: 20px;
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: flex-end;
+                                        animation: bounce-icons 2s infinite;
+                              }
+
+                              .contact-icons a {
+                                        display: flex;
+                                        align-items: center;
+                                        color: #000;
+                                        text-decoration: none;
+                                        margin-bottom: 10px;
+                                        background-color: #fff;
+                                        padding: 5px;
+                                        border-radius: 5px;
+                              }
+
+                              .contact-icons a i {
+                                        margin-right: 5px;
+                              }
+
+                              @keyframes bounce-icons {
+                                        0% {
+                                                  transform: translateY(0);
+                                        }
+
+                                        50% {
+                                                  transform: translateY(-10px);
+                                        }
+
+                                        100% {
+                                                  transform: translateY(0);
+                                        }
+                              }
+
+                              .password-form {
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: center;
+                                        justify-content: center;
+                                        height: 100vh;
+                                        position: relative;
+                              }
+
+                              .password-form label {
+                                        font-weight: bold;
+                              }
+
+                              .password-form input {
+                                        margin-bottom: 10px;
+                                        padding: 5px;
+                                        text-align: center;
+                              }
+
+                              .password-form button {
+                                        padding: 10px 20px;
+                                        font-weight: bold;
+                                        background-color: #000;
+                                        color: #fff;
+                                        border: none;
+                                        border-radius: 5px;
+                                        cursor: pointer;
+                              }
+
+                              .password-error {
+                                        color: red;
+                                        font-weight: bold;
+                                        margin-top: 10px;
+                              }
+
+                              .city-silhouette {
+                                        width: 100%;
+                                        height: auto;
+                                        position: absolute;
+                                        bottom: 0;
+                                        z-index: -1;
+                              }
+
+                              .contact-info {
+                                        margin-top: 20px;
+                                        text-align: center;
+                              }
+
+                              .contact-info p {
+                                        margin-bottom: 5px;
+                              }
+
+                              .contact-info a {
+                                        text-decoration: none;
+                                        color: #000;
+                              }
+
+                              .contact-info i {
+                                        margin-right: 5px;
+                              }
+
+                              .blackout {
+                                        width: 100%;
+                                        height: 100%;
+                                        position: fixed;
+                                        top: 0;
+                                        left: 0;
+                                        background-color: #000;
+                                        z-index: 999;
+                                        display: none;
+                                        opacity: 0;
+                                        transition: opacity 1s ease-in;
+                              }
+
+                              .blackout.active {
+                                        display: block;
+                                        opacity: 1;
+                              }
+
+                              .print-cv-btn {
+                                        position: fixed;
+                                        top: 20px;
+                                        right: 20px;
+                                        background-color: #000;
+                                        color: #fff;
+                                        padding: 10px 20px;
+                                        font-weight: bold;
+                                        border: none;
+                                        border-radius: 5px;
+                                        cursor: pointer;
+                                        z-index: 9999;
+                                        display: none;
+                              }
+
+                              @media print {
+                                        .print-cv-btn {
+                                                  display: none !important;
+                                        }
+                              }
+                    </style>
+                    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+                    <script>
+                              function toggleContent(menuId) {
+                                        var content = document.getElementById(menuId + '-content');
+                                        if (content.style.display === 'block') {
+                                                  content.style.display = 'none';
+                                        } else {
+                                                  content.style.display = 'block';
+                                        }
+                              }
+
+                              function showCV() {
+                                        var password = document.getElementById("password").value;
+                                        if (password === "1234") {
+                                                  document.getElementById("password-form").style.display = "none";
+                                                  document.getElementById("cv-container").style.display = "block";
+                                                  document.getElementById("password-error").style.display = "none";
+                                                  document.getElementById("print-cv-btn").style.display = "block";
+                                        } else {
+                                                  document.getElementById("password-error").style.display = "block";
+                                        }
+                              }
+
+                              function handleKeyPress(e) {
+                                        if (e.keyCode === 13) {
+                                                  showCV();
+                                        }
+                              }
+                    </script>
+          </head>
+          <body>
+                    <div class="container">
+                              <div class="password-form" id="password-form">
+                                        <h1 class="text-center">Cem Aydın - CV</h1>
+                                        <label for="password">Şifre:</label>
+                                        <input type="password" id="password" name="password" class="form-control" onkeypress="handleKeyPress(event)">
+                                        <button onclick="showCV()" class="btn btn-dark">Giriş</button>
+                                        <p id="password-error" class="password-error" style="display: none;">Hatalı şifre. Lütfen tekrar deneyin.</p>
+                                        <img class="city-silhouette" src="https://www.just.edu.jo/assets/just2022/deps/images/arch/city.jpg" alt="City Silhouette">
+                              </div>
+                              <div class="cv-container" id="cv-container" style="display: none;">
+                                        <header>
+                                                  <h1 style="text-align: center; font-weight: bold;">Cem Aydın</h1>
+                                                  <img src="https://media.licdn.com/dms/image/D4D03AQHATZ6R9d8tgQ/profile-displayphoto-shrink_200_200/0/1668885961592?e=1691020800&v=beta&t=RRxbSHYKiw9vmSYegxavudioQyZs8R6DGkPfB1biQGs" alt="Profile Picture">
+                                                  <h3 style="text-align: center; font-weight: bold; font-size: 28px;">Şehir Plancısı</h3>
+                                        </header>
+                                        <section>
+                                                  <h2 style="font-weight: bold; text-align: justify;">Hakkımda</h2>
+                                                  <p> Merhaba. Adım Cem Aydın. Lisans eğitimime 2019 senesinde Kırklareli Üniversitesi, Mimarlık Fakültesi, Şehir ve Bölge Planlama bölümünde başladım. 2 senelik eğitimime devam ettikten sonra 3. sınıfta Yıldız Teknik Üniversitesi'ne kurumlar arası yatay geçiş ile geçtim. 2022 senesinde ise 2.üniversite olarak Yıldız Teknik Üniversitesi'nde eğitimim devam ederken İstanbul Üniversitesinde Bilgisayar Programlama bölümü okumaya başladım. 2017 senesinden beri bilgisayar kodlama ve yazılım üzerine çalışmaktayım. Bu doğrultuda Şehir ve Bölge Planlamada aktif kullanılan ArcGıs, ArcMap, Sketchup, Rhıno ve Blender uygulamalarında uzmanlaşmaktayım. Hali hazırda ESRİ firmasında program sertifikasyon eğitimleri vermekteyim. Phyton bazlı CBS analizleri oluştumak ve mevcut analizlerden yararlanmak üzere yaptığım çalışmaların eğitimini ArcGıs ve ArcMap üzerinden vermekteyim. </p>
+                                        </section>
+                                        <section>
+                                                  <h2 style="font-weight: bold; text-align: justify;">İletişim</h2>
+                                                  <div class="menu" onclick="toggleContent('contact-info')">İletişim</div>
+                                                  <div id="contact-info-content" class="content">
+                                                            <div class="contact-info">
+                                                                      <p>
+                                                                                <a href="tel:+905435077583">
+                                                                                          <i class="fas fa-phone"></i> Numara: +90 (543) 507 75 83 </a>
+                                                                      </p>
+                                                                      <p>
+                                                                                <a href="mailto:madeintoprak@gmail.com">
+                                                                                          <i class="fas fa-envelope"></i> Mail: madeintoprak@gmail.com </a>
+                                                                      </p>
+                                                                      <p>
+                                                                                <a href="https://www.linkedin.com/in/cem-ayd%C4%B1n-ab945921b" target="_blank">
+                                                                                          <i class="fab fa-linkedin"></i> Linkedin: Cem Aydın </a>
+                                                                      </p>
+                                                            </div>
+                                                  </div>
+                                        </section>
+                              </div>
+                    </div>
+                    <button class="print-cv-btn" id="print-cv-btn" onclick="window.print()">CV'yi Yazdır</button>
+                    <div class="contact-icons">
+                              <a href="tel:+905435077583">
+                                        <i class="fas fa-phone"></i>
+                              </a>
+                              <a href="mailto:madeintoprak@gmail.com">
+                                        <i class="fas fa-envelope"></i>
+                              </a>
+                              <a href="https://www.linkedin.com/in/cem-ayd%C4%B1n-ab945921b" target="_blank">
+                                        <i class="fab fa-linkedin"></i>
+                              </a>
+                    </div>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+          </body>
+</html>
